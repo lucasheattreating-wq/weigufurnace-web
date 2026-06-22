@@ -1,0 +1,9 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const title = 'Contact Us | Methanol Dropper Quote';
+const description = 'Request a quote for methanol dropper for furnace atmosphere control. Send furnace type, medium, outlet quantity, connection size and order quantity.';
+---
+<BaseLayout title={title} description={description}>
+<section class="section"><div class="container"><p class="eyebrow">Contact</p><h1 class="h1">Request a Methanol Dropper Quote</h1><p class="lead">Please send your furnace type, medium, outlet quantity, connection size, insertion tube requirement, and order quantity.</p><div class="card" style="margin-top:30px"><form><div class="grid grid-2"><input placeholder="Name"/><input placeholder="Email"/><input placeholder="Company"/><input placeholder="Country"/><input placeholder="Furnace Type"/><input placeholder="Required Quantity"/></div><textarea placeholder="Message" rows="7" style="margin-top:16px;width:100%"></textarea><button class="btn" style="border:0;margin-top:16px">Submit Inquiry</button></form></div></div></section>
+</BaseLayout>
+<style>input,textarea{padding:14px 16px;border:1px solid var(--line);border-radius:12px;font:inherit}</style>

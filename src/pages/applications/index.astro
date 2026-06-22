@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTA from '../../components/CTA.astro';
+import { applications, images } from '../../data/site';
+const title = 'Methanol Dropper Applications | Furnace Atmosphere Control';
+const description = 'Methanol dropper applications for carburizing furnaces, heat treatment furnaces, pit furnaces, box furnaces, roller furnaces, and mesh belt carburizing lines.';
+---
+<BaseLayout title={title} description={description}>
+<section class="section"><div class="container"><p class="eyebrow">Applications</p><h1 class="h1">Methanol Dropper Applications</h1><p class="lead">One product, multiple furnace atmosphere control applications. Use this page as the entry hub for furnace-type SEO pages.</p><div class="hero-img" style="margin-top:30px"><img src={images.application1} alt="Methanol dropper application for furnace atmosphere control" /></div></div></section>
+<section class="section gray"><div class="container grid grid-3">{applications.map((item)=><a class="card" href={`/applications/${item.toLowerCase().replaceAll(' ','-').replaceAll('&','and')}-methanol-dropper/`}><h2>{item}</h2><p>Methanol dropper for controlled liquid feeding in {item.toLowerCase()} atmosphere systems.</p></a>)}</div></section>
+<CTA />
+</BaseLayout>

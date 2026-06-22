@@ -1,0 +1,14 @@
+---
+const { title, description } = Astro.props;
+---
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>{title} | WEIGU Furnace</title>
+  <meta name="description" content={description} />
+</head>
+<body>
+  <header style="background:#00234b;color:#fff;padding:1rem;"><strong>WEIGU Furnace</strong></header>
+  <main><slot /></main>
+</body>
+</html>

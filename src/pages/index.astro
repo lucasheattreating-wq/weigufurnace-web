@@ -1,1 +1,19 @@
----\nimport BaseLayout from '../layouts/BaseLayout.astro';\n---\n<BaseLayout title=\"Methanol Dropper\" description=\"Adjustable stainless steel drip feeder.\">\n  <h1>WEIGU Furnace - Methanol Dropper</h1>\n  <p>High-precision atmosphere control for industrial furnaces.</p>\n</BaseLayout>
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { images } from '../data/site';
+---
+<BaseLayout title="Methanol Dropper for Furnace" description="Adjustable stainless steel drip feeder for controlled methanol liquid feeding.">
+  <section style="text-align: center; padding: 3rem; background: #f4f4f4;">
+    <h1>Methanol Dropper for Furnace Atmosphere Control</h1>
+    <p>Adjustable stainless steel drip feeder for heat treatment furnace.</p>
+    <img src={images.hero} alt="Methanol Dropper Hero" style="max-width: 100%; height: auto; margin-top: 2rem;" />
+  </section>
+  <section style="padding: 2rem; max-width: 1200px; margin: 0 auto;">
+    <h2>Reliable Methanol Drip Feeding</h2>
+    <ul>
+      <li>Adjustable drip rate</li>
+      <li>Stainless steel body</li>
+      <li>Tempered sight glass</li>
+    </ul>
+  </section>
+</BaseLayout>

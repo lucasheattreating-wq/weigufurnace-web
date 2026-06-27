@@ -1,12 +1,28 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import CTA from '../../components/CTA.astro';
-import { applications, images } from '../../data/site';
-const title = 'Methanol Dropper Applications | Furnace Atmosphere Control';
-const description = 'Methanol dropper applications for carburizing furnaces, heat treatment furnaces, pit furnaces, box furnaces, roller furnaces, and mesh belt carburizing lines.';
+import { images, applications } from '../../data/site';
 ---
-<BaseLayout title={title} description={description}>
-<section class="section"><div class="container"><p class="eyebrow">Applications</p><h1 class="h1">Methanol Dropper Applications</h1><p class="lead">One product, multiple furnace atmosphere control applications. Use this page as the entry hub for furnace-type SEO pages.</p><div class="hero-img" style="margin-top:30px"><img src={images.application1} alt="Methanol dropper application for furnace atmosphere control" /></div></div></section>
-<section class="section gray"><div class="container grid grid-3">{applications.map((item)=><a class="card" href={`/applications/${item.toLowerCase().replaceAll(' ','-').replaceAll('&','and')}-methanol-dropper/`}><h2>{item}</h2><p>Methanol dropper for controlled liquid feeding in {item.toLowerCase()} atmosphere systems.</p></a>)}</div></section>
-<CTA />
+
+<BaseLayout title="Furnace Applications" description="Precision methanol dropper applications for various industrial furnaces.">
+  <section class="section section-alt">
+    <div class="container">
+      <p style="color: var(--accent); font-weight: 600; text-transform: uppercase; margin-bottom: 1rem;">Solutions Hub</p>
+      <h1>Optimized for Every Furnace Type</h1>
+      <p style="font-size: 1.2rem; color: var(--text-muted); max-width: 700px; margin-bottom: 3rem;">
+        Our adjustable drip feeders are essential for atmosphere control in diverse heat treatment environments.
+      </p>
+
+      <div class="grid grid-3">
+        {applications.map((app) => (
+          <div class="card">
+            <h3 style="margin-bottom: 1rem;">{app}</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">
+              Controlled liquid feeding for {app.toLowerCase()} atmosphere stability.
+            </p>
+            <a href="/contact-us/" style="color: var(--accent); text-decoration: none; font-weight: 600;">Learn More →</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
 </BaseLayout>

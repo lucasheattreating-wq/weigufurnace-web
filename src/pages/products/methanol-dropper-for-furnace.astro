@@ -1,29 +1,25 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import CTA from '../../components/CTA.astro';
-import { images, applications } from '../../data/site';
-const title = 'Methanol Dropper for Furnace | Stainless Steel Drip Feeder';
-const description = 'Methanol dropper for furnace atmosphere control with stainless steel body, tempered sight glass, adjustable drip valve, single dual and three-outlet options.';
+import { images, features } from '../../data/site';
 ---
-<BaseLayout title={title} description={description}>
+
+<BaseLayout title="Methanol Dropper for Furnace" description="Technical specifications for our high-precision stainless steel drip feeder.">
   <section class="section">
-    <div class="container">
-      <div class="breadcrumb">Home / Products / Methanol Dropper for Furnace</div>
-      <div class="grid grid-2" style="align-items:center">
-        <div>
-          <p class="eyebrow">Product</p>
-          <h1 class="h1">Methanol Dropper for Furnace</h1>
-          <p class="lead">Stainless steel adjustable drip feeder for furnace atmosphere control, suitable for methanol and kerosene feeding in heat treatment and carburizing applications.</p>
-          <a class="btn" href="/contact-us/">Request a Quote</a>
+    <div class="container grid grid-2" style="align-items: center;">
+      <div>
+        <h1 style="font-size: 2.5rem;">Methanol Dropper for Furnace</h1>
+        <p style="margin-bottom: 2rem; color: var(--text-muted);">Industrial grade stainless steel adjustable drip feeder for carburizing and heat treatment furnaces.</p>
+        <div style="background: var(--bg-alt); padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem;">
+          <h4 style="margin-bottom: 1rem;">Technical Overview</h4>
+          <ul style="list-style: none; display: grid; gap: 0.5rem;">
+            {features.map(f => <li style="display: flex; gap: 0.5rem;"><span style="color: var(--accent);">●</span> {f}</li>)}
+          </ul>
         </div>
-        <div class="hero-img"><img src={images.productMain} alt="Methanol dropper for furnace with stainless steel body and sight glass" /></div>
+        <a href="/contact-us/" class="btn btn-primary">Request Technical Datasheet</a>
+      </div>
+      <div>
+        <img src={images.productMain} alt="Product Detail" style="width: 100%; border-radius: 12px; box-shadow: var(--shadow);" />
       </div>
     </div>
   </section>
-  <section class="section gray"><div class="container"><h2 class="h2">Technical Specifications</h2><table class="table"><tbody><tr><th>Product Name</th><td>Methanol Dropper for Furnace</td></tr><tr><th>Material</th><td>Stainless steel body, optional carbon steel parts depending on configuration</td></tr><tr><th>Medium</th><td>Methanol, kerosene, and selected liquid media</td></tr><tr><th>Outlet Options</th><td>Single outlet, dual outlet, three outlet</td></tr><tr><th>Visible Window</th><td>Round tempered sight glass</td></tr><tr><th>Sealing Parts</th><td>PTFE gaskets and O-rings</td></tr><tr><th>Tube</th><td>Custom insertion tube length available</td></tr><tr><th>Application</th><td>Furnace atmosphere control, carburizing, heat treatment liquid feeding</td></tr></tbody></table></div></section>
-  <section class="section"><div class="container"><p class="eyebrow">Configurations</p><h2 class="h2">Single, Dual, and Three-Outlet Options</h2><div class="card"><img src={images.configurations} alt="Available configurations of methanol dropper for furnace" /></div></div></section>
-  <section class="section gray"><div class="container grid grid-3"><div class="card"><img src={images.singleOutlet} alt="Single outlet methanol dropper" /><h3>Single Outlet</h3><p>For simple furnace liquid feeding layouts requiring one controlled output.</p></div><div class="card"><img src={images.dualOutlet} alt="Dual outlet methanol dropper" /><h3>Dual Outlet</h3><p>For furnace systems requiring two liquid feeding points.</p></div><div class="card"><img src={images.threeOutlet} alt="Three outlet methanol dropper" /><h3>Three Outlet</h3><p>For more complex atmosphere control layouts with multiple feed points.</p></div></div></section>
-  <section class="section"><div class="container"><p class="eyebrow">Applications</p><h2 class="h2">Suitable Furnace Types</h2><div class="grid grid-3">{applications.map((item)=><div class="card"><h3>{item}</h3><p>Used as a controlled liquid feed component for furnace atmosphere adjustment and process support.</p></div>)}</div></div></section>
-  <section class="section gray"><div class="container grid grid-2" style="align-items:center"><div class="hero-img"><img src={images.repairKit} alt="Methanol dropper repair kit with sight glass and gaskets" /></div><div><p class="eyebrow">Maintenance</p><h2 class="h2">Spare Parts and Repair Kit</h2><p>Available spare parts include sight glass, PTFE gaskets, O-rings, black control knobs, insertion tubes, and adjustable drip valves.</p></div></div></section>
-  <CTA />
 </BaseLayout>

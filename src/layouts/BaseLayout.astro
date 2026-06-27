@@ -1,14 +1,60 @@
 ---
+import "../styles/global.css";
 const { title, description } = Astro.props;
 ---
+
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>{title} | WEIGU Furnace</title>
-  <meta name="description" content={description} />
-</head>
-<body>
-  <header style="background:#00234b;color:#fff;padding:1rem;"><strong>WEIGU Furnace</strong></header>
-  <main><slot /></main>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title} | WEIGU Furnace Accessories</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <header>
+      <div class="container nav-container">
+        <a href="/" class="logo">WEIGU</a>
+        <nav class="nav-links">
+          <a href="/">Home</a>
+          <a href="/products/methanol-dropper-for-furnace/">Product</a>
+          <a href="/applications/">Applications</a>
+          <a href="/about-us/">About Us</a>
+          <a href="/contact-us/">Contact</a>
+        </nav>
+      </div>
+    </header>
+    
+    <main>
+      <slot />
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <h3 style="color: white; margin-bottom: 1.5rem;">WEIGU Furnace</h3>
+            <p style="opacity: 0.8; max-width: 400px;">Specialized manufacturer of high-precision methanol droppers and atmosphere control kits for industrial heat treatment processes.</p>
+          </div>
+          <div>
+            <h4 style="color: white; margin-bottom: 1.5rem;">Quick Links</h4>
+            <ul style="list-style: none;">
+              <li style="margin-bottom: 0.5rem;"><a href="/" style="color: white; opacity: 0.8; text-decoration: none;">Home</a></li>
+              <li style="margin-bottom: 0.5rem;"><a href="/products/methanol-dropper-for-furnace/" style="color: white; opacity: 0.8; text-decoration: none;">Product</a></li>
+              <li style="margin-bottom: 0.5rem;"><a href="/applications/" style="color: white; opacity: 0.8; text-decoration: none;">Applications</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 style="color: white; margin-bottom: 1.5rem;">Contact</h4>
+            <p style="opacity: 0.8;">Email: sales@weigufurnace.com</p>
+            <p style="opacity: 0.8;">Quality solutions for furnace accessories.</p>
+          </div>
+        </div>
+        <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; text-align: center; opacity: 0.6; font-size: 0.875rem;">
+          &copy; {new Date().getFullYear()} WEIGU Furnace. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>

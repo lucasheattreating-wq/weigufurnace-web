@@ -1,63 +1,51 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { images, features, applications } from '../data/site';
+import { images, features } from '../data/site';
 ---
 
 <BaseLayout 
   title="High-Precision Methanol Dropper for Industrial Furnaces" 
-  description="Adjustable stainless steel drip feeder for controlled methanol and kerosene liquid feeding in heat treatment and carburizing furnace atmosphere control."
+  description="Adjustable stainless steel drip feeder for controlled methanol and kerosene liquid feeding."
 >
   <!-- Hero Section -->
-  <section class="section section-alt" style="padding: 8rem 0;">
-    <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
-      <div>
-        <p class="eyebrow" style="color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem;">Atmosphere Control Precision</p>
+  <section class="section section-alt" style="padding: 6rem 0;">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <p style="color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem;">Atmosphere Control Precision</p>
         <h1>Methanol Dropper for Furnace Systems</h1>
-        <p class="lead" style="font-size: 1.25rem; color: var(--text-muted); margin-bottom: 2.5rem;">
+        <p style="font-size: 1.25rem; color: var(--text-muted); margin-bottom: 2.5rem; max-width: 600px;">
           Engineered for stability. Our stainless steel drip feeders provide precise liquid delivery for carburizing and protective atmosphere furnaces.
         </p>
-        <div style="display: flex; gap: 1rem;">
+        <div class="hero-btns" style="display: flex; gap: 1rem;">
           <a href="/contact-us/" class="btn btn-primary">Request Quote</a>
           <a href="/products/methanol-dropper-for-furnace/" class="btn btn-outline">Technical Specs</a>
         </div>
       </div>
       <div>
         <div style="background: white; padding: 1rem; border-radius: 12px; box-shadow: var(--shadow);">
-          <img src={images.hero} alt="Methanol Dropper Hero" style="width: 100%; border-radius: 8px;" />
+          <img src={images.hero} alt="Methanol Dropper Hero" style="width: 100%; border-radius: 8px; display: block;" />
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Features Grid -->
+  <!-- Quick Features -->
   <section class="section">
     <div class="container">
       <div style="text-align: center; max-width: 800px; margin: 0 auto 4rem;">
-        <h2 style="margin-bottom: 1rem;">Premium Engineering Features</h2>
-        <p style="color: var(--text-muted);">Built to withstand demanding industrial environments with precision and durability.</p>
+        <h2>Premium Engineering Features</h2>
       </div>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+      <div class="grid grid-3">
         {features.slice(0, 6).map((feature) => (
           <div class="card">
             <div style="width: 40px; height: 40px; background: var(--bg-alt); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
               <span style="color: var(--accent); font-weight: 700;">✓</span>
             </div>
-            <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem;">{feature}</h3>
-            <p style="color: var(--text-muted); font-size: 0.95rem;">Optimized performance for {feature.toLowerCase()} requirements.</p>
+            <h3>{feature}</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 1rem;">Optimized for high-performance furnace atmosphere control.</p>
           </div>
         ))}
       </div>
-    </div>
-  </section>
-
-  <!-- CTA Section -->
-  <section class="section" style="background-color: var(--primary); color: white; text-align: center;">
-    <div class="container">
-      <h2 style="color: white; margin-bottom: 1.5rem;">Ready to Upgrade Your Atmosphere Control?</h2>
-      <p style="margin-bottom: 2.5rem; opacity: 0.8; max-width: 600px; margin-left: auto; margin-right: auto;">
-        Contact our technical team today for a customized configuration and competitive quotation.
-      </p>
-      <a href="/contact-us/" class="btn btn-primary" style="background: white; color: var(--primary);">Contact Specialist</a>
     </div>
   </section>
 </BaseLayout>

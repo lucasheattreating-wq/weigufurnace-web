@@ -33,18 +33,50 @@ import { images, features } from '../data/site';
   <section class="section">
     <div class="container">
       <div style="text-align: center; max-width: 800px; margin: 0 auto 4rem;">
+        <p style="color: var(--accent); font-weight: 600; text-transform: uppercase; margin-bottom: 0.5rem;">Core Advantages</p>
         <h2>Premium Engineering Features</h2>
       </div>
       <div class="grid grid-3">
         {features.slice(0, 6).map((feature) => (
           <div class="card">
-            <div style="width: 40px; height: 40px; background: var(--bg-alt); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
-              <span style="color: var(--accent); font-weight: 700;">✓</span>
+            <div style="width: 48px; height: 48px; background: #FFF7ED; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; border: 1px solid #FFEDD5;">
+              <span style="color: var(--accent); font-weight: 800; font-size: 1.2rem;">✓</span>
             </div>
-            <h3>{feature}</h3>
-            <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 1rem;">Optimized for high-performance furnace atmosphere control.</p>
+            <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem;">{feature}</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">Engineered for high-performance furnace atmosphere control and stability.</p>
           </div>
         ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Spec Preview -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="grid grid-2" style="align-items: center;">
+        <div style="background: white; padding: 2rem; border-radius: 16px; border: 1px solid var(--border);">
+          <h3 style="margin-bottom: 1.5rem;">Technical Quick Glance</h3>
+          <div style="display: grid; gap: 1rem;">
+            {[
+              ['Body Material', 'SUS304 / SUS316L Stainless Steel'],
+              ['Inlet Connection', 'Standard Threaded / Custom Flange'],
+              ['Outlet Options', 'Single / Dual / Triple Outlet'],
+              ['Sight Glass', 'High-Pressure Tempered Glass']
+            ].map(([label, val]) => (
+              <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--bg-alt); padding-bottom: 0.5rem;">
+                <span style="font-weight: 600; color: var(--text-muted);">{label}</span>
+                <span style="color: var(--primary);">{val}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div style="padding-left: 2rem;">
+          <h2>Built for Durability</h2>
+          <p style="margin-bottom: 2rem; color: var(--text-muted);">
+            Each methanol dropper undergoes rigorous quality checks to ensure consistent performance in high-temperature environments.
+          </p>
+          <a href="/products/methanol-dropper-for-furnace/" class="btn btn-outline">Explore Full Specs</a>
+        </div>
       </div>
     </div>
   </section>

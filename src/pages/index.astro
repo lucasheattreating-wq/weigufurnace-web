@@ -1,83 +1,105 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { images, features } from '../data/site';
+import { siteConfig } from '../data/navigation';
+
+const categories = [
+  { name: 'Atmosphere Control', desc: 'Liquid drip feeders and flow control for carburizing processes.', icon: 'M', href: '/consumables/furnace-atmosphere-control/' },
+  { name: 'Temperature Measurement', desc: 'Precision thermocouple connection parts and insulation tubes.', icon: 'T', href: '/consumables/temperature-measurement/' },
+  { name: 'Insulation & Lining', desc: 'High-temperature ceramic fiber blankets and fixings.', icon: 'I', href: '/consumables/furnace-insulation-lining/' },
+  { name: 'Testing & Recording', desc: 'Process verification rings and hardness testing supplies.', icon: 'V', href: '/consumables/testing-recording/' }
+];
 ---
 
-<BaseLayout 
-  title="High-Precision Methanol Dropper for Industrial Furnaces" 
-  description="Adjustable stainless steel drip feeder for controlled methanol and kerosene liquid feeding."
->
-  <!-- Hero Section -->
-  <section class="section section-alt" style="padding: 6rem 0;">
-    <div class="container hero-grid">
-      <div class="hero-content">
-        <p style="color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem;">Atmosphere Control Precision</p>
-        <h1>Methanol Dropper for Furnace Systems</h1>
-        <p style="font-size: 1.25rem; color: var(--text-muted); margin-bottom: 2.5rem; max-width: 600px;">
-          Engineered for stability. Our stainless steel drip feeders provide precise liquid delivery for carburizing and protective atmosphere furnaces.
+<BaseLayout title="Heat Treatment Furnace Accessories & Consumables" description="Leading expert in heat treatment furnace process stability. Sourcing atmosphere control kits, temperature measurement probes, and insulation materials.">
+  
+  <!-- Hero Section (Polycase Style) -->
+  <section class="relative bg-white border-b border-gray-100 overflow-hidden">
+    <div class="container mx-auto px-4 py-24 flex flex-col md:flex-row items-center gap-16">
+      <div class="flex-1 text-center md:text-left">
+        <p class="text-accent font-bold uppercase tracking-widest text-sm mb-4">Furnace Process Stability Specialist</p>
+        <h1 class="text-4xl md:text-6xl font-extrabold text-primary mb-8 leading-tight">
+          Precision Consumables For Heat Treatment Furnaces
+        </h1>
+        <p class="text-lg text-gray-600 mb-10 max-w-xl leading-relaxed">
+          You need reliable atmosphere control and temperature measurement to ensure high-quality results. WEIGU provides industrial-grade accessories designed for pit furnaces, box furnaces, and mesh belt lines.
         </p>
-        <div class="hero-btns" style="display: flex; gap: 1rem;">
-          <a href="/contact-us/" class="btn btn-primary">Request Quote</a>
-          <a href="/products/methanol-dropper-for-furnace/" class="btn btn-outline">Technical Specs</a>
+        <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+          <a href="/consumables/" class="bg-primary text-white px-8 py-3 rounded-md font-bold hover:bg-blue-900 transition-all shadow-lg">Browse Consumables</a>
+          <a href="/contact/" class="border-2 border-primary text-primary px-8 py-3 rounded-md font-bold hover:bg-gray-50 transition-all">Get Technical Support</a>
         </div>
       </div>
-      <div>
-        <div style="background: white; padding: 1rem; border-radius: 12px; box-shadow: var(--shadow);">
-          <img src={images.hero} alt="Methanol Dropper Hero" style="width: 100%; border-radius: 8px; display: block;" />
+      <div class="flex-1 relative">
+        <div class="bg-gray-100 aspect-video rounded-lg shadow-inner flex items-center justify-center border-2 border-dashed border-gray-200 text-gray-400">
+          <span class="text-sm">Placeholder: Furnace Atmosphere Control Retrofit Kit Image</span>
+        </div>
+        <div class="absolute -bottom-6 -left-6 bg-accent text-white p-4 shadow-xl hidden lg:block rounded-tr-3xl">
+          <p class="text-xs uppercase font-bold tracking-tighter">Certified Quality</p>
+          <p class="text-lg font-bold">Reliable Source</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Quick Features -->
-  <section class="section">
-    <div class="container">
-      <div style="text-align: center; max-width: 800px; margin: 0 auto 4rem;">
-        <p style="color: var(--accent); font-weight: 600; text-transform: uppercase; margin-bottom: 0.5rem;">Core Advantages</p>
-        <h2>Premium Engineering Features</h2>
-      </div>
-      <div class="grid grid-3">
-        {features.slice(0, 6).map((feature) => (
-          <div class="card">
-            <div style="width: 48px; height: 48px; background: #FFF7ED; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; border: 1px solid #FFEDD5;">
-              <span style="color: var(--accent); font-weight: 800; font-size: 1.2rem;">✓</span>
-            </div>
-            <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem;">{feature}</h3>
-            <p style="color: var(--text-muted); font-size: 0.95rem;">Engineered for high-performance furnace atmosphere control and stability.</p>
+  <!-- Category Grid (Polycase Sidebar Context) -->
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row gap-12">
+        
+        <!-- Sidebar Navigation (Polycase Style) -->
+        <aside class="w-full md:w-64 flex-shrink-0">
+          <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden sticky top-24">
+            <h2 class="bg-primary text-white px-4 py-3 text-sm font-bold uppercase tracking-wider">Top Categories</h2>
+            <nav class="p-2 space-y-1">
+              {categories.map(cat => (
+                <a href={cat.href} class="block px-4 py-2 text-sm text-gray-700 hover:bg-accent/10 hover:text-accent rounded transition-all font-medium">
+                  {cat.name}
+                </a>
+              ))}
+            </nav>
           </div>
-        ))}
-      </div>
-    </div>
-  </section>
+        </aside>
 
-  <!-- Spec Preview -->
-  <section class="section section-alt">
-    <div class="container">
-      <div class="grid grid-2" style="align-items: center;">
-        <div style="background: white; padding: 2rem; border-radius: 16px; border: 1px solid var(--border);">
-          <h3 style="margin-bottom: 1.5rem;">Technical Quick Glance</h3>
-          <div style="display: grid; gap: 1rem;">
-            {[
-              ['Body Material', 'SUS304 / SUS316L Stainless Steel'],
-              ['Inlet Connection', 'Standard Threaded / Custom Flange'],
-              ['Outlet Options', 'Single / Dual / Triple Outlet'],
-              ['Sight Glass', 'High-Pressure Tempered Glass']
-            ].map(([label, val]) => (
-              <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--bg-alt); padding-bottom: 0.5rem;">
-                <span style="font-weight: 600; color: var(--text-muted);">{label}</span>
-                <span style="color: var(--primary);">{val}</span>
-              </div>
+        <!-- Main Content Block -->
+        <div class="flex-1">
+          <h2 class="text-2xl font-bold mb-10 text-primary border-l-4 border-accent pl-4">Shop By Category</h2>
+          <div class="grid sm:grid-cols-2 gap-8">
+            {categories.map(cat => (
+              <a href={cat.href} class="group bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:border-accent hover:shadow-xl transition-all flex items-start gap-6">
+                <div class="w-14 h-14 bg-gray-50 flex items-center justify-center rounded-lg text-2xl group-hover:bg-accent group-hover:text-white transition-all text-primary font-bold">
+                  {cat.icon}
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold mb-3 group-hover:text-accent transition-colors">{cat.name}</h3>
+                  <p class="text-sm text-gray-500 leading-relaxed">{cat.desc}</p>
+                </div>
+              </a>
             ))}
           </div>
+
+          <!-- Content Block (Checklist 50-80 words rule) -->
+          <article class="mt-20 prose prose-slate max-w-none">
+            <h2 class="text-3xl font-bold mb-8">Maintain Process Stability With Precision Accessories</h2>
+            <div class="bg-white p-10 rounded-2xl border border-gray-100 shadow-sm leading-relaxed text-gray-600">
+              <p>
+                You understand that even the smallest failure in atmosphere control or temperature measurement can lead to costly quality issues. Our mission at WEIGU is to help you mitigate these risks by providing high-quality furnace consumables that ensure consistent performance. Whether you are running a carburizing pit furnace or a large-scale mesh belt heat treatment line, our expert-sourced parts offer the durability your factory demands.
+              </p>
+            </div>
+          </article>
         </div>
-        <div style="padding-left: 2rem;">
-          <h2>Built for Durability</h2>
-          <p style="margin-bottom: 2rem; color: var(--text-muted);">
-            Each methanol dropper undergoes rigorous quality checks to ensure consistent performance in high-temperature environments.
-          </p>
-          <a href="/products/methanol-dropper-for-furnace/" class="btn btn-outline">Explore Full Specs</a>
-        </div>
+
       </div>
     </div>
   </section>
+
+  <!-- CTA Box (Polycase Style) -->
+  <section class="bg-primary py-16">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-white text-3xl font-bold mb-6">Need Custom Furnace Accessories?</h2>
+      <p class="text-gray-300 mb-10 max-w-2xl mx-auto">
+        Please provide your furnace type, working temperature, and specific requirements. Our technical team will provide a tailored configuration for your process.
+      </p>
+      <a href="/contact/" class="bg-accent text-white px-10 py-4 rounded font-extrabold hover:scale-105 transition-transform inline-block">Request A Technical Quote</a>
+    </div>
+  </section>
+
 </BaseLayout>

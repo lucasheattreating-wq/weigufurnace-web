@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const fields = [
+  "Name", "Email", "Company", "Country", "Product Needed", "Furnace Type", 
+  "Working Temperature", "Application", "Material / Medium", "Size or Model", 
+  "Thread / Connection Type", "Quantity", "Certificate Requirement", "Message"
+];
+---
+
+<BaseLayout title="Contact Us | Request A Technical Quote" description="Contact WEIGU for heat treatment furnace consumables and technical support. Fill out our quote form for precise atmosphere control and temperature measurement parts.">
+  <div class="bg-white py-20 border-b border-gray-100">
+    <div class="container mx-auto px-4 text-center">
+       <h1 class="text-5xl font-extrabold text-primary mb-6">Request A Technical Quote</h1>
+       <p class="text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed">
+         You are one step away from improving your furnace process stability. Please provide your technical details below for a professional recommendation.
+       </p>
+    </div>
+  </div>
+
+  <section class="py-20 bg-gray-50" id="quote-form">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto bg-white rounded-3xl shadow-2xl border border-gray-100 overflow-hidden flex flex-col md:flex-row">
+        
+        <div class="bg-primary p-12 text-white md:w-80">
+          <h2 class="text-2xl font-bold mb-8">Expert Support</h2>
+          <p class="text-gray-400 text-sm leading-relaxed mb-10">
+            Provide furnace type, working temperature, and size requirements for a faster quote.
+          </p>
+          <div class="space-y-6">
+            <div>
+              <p class="text-accent font-bold uppercase text-xs mb-1">Direct Email</p>
+              <p class="font-medium">sales@weigufurnace.com</p>
+            </div>
+            <div>
+              <p class="text-accent font-bold uppercase text-xs mb-1">Response Time</p>
+              <p class="font-medium">Within 24 Hours</p>
+            </div>
+          </div>
+        </div>
+
+        <form class="p-12 flex-1 grid grid-cols-1 md:grid-cols-2 gap-6">
+          {fields.map(field => (
+            <div class={field === "Message" ? "md:col-span-2" : ""}>
+              <label class="block text-xs font-bold text-gray-400 uppercase mb-2 tracking-tighter">{field}</label>
+              {field === "Message" ? (
+                <textarea rows="4" class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 focus:border-accent focus:outline-none transition-all"></textarea>
+              ) : (
+                <input type="text" class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 focus:border-accent focus:outline-none transition-all" />
+              )}
+            </div>
+          ))}
+          <div class="md:col-span-2 mt-4">
+            <button type="button" class="w-full bg-accent text-white py-5 rounded-xl font-black text-xl hover:bg-orange-600 shadow-xl shadow-accent/30 transition-all">
+              Send Technical Inquiry
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

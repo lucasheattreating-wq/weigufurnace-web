@@ -1,6 +1,9 @@
 ---
-import "../styles/global.css";
+import { navigation, siteConfig } from '../data/navigation';
 const { title, description } = Astro.props;
+
+// SEO Checklist Rule: All titles Capitalize Each Word
+const capitalizedTitle = title.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
 ---
 
 <!DOCTYPE html>
@@ -8,52 +11,81 @@ const { title, description } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title} | WEIGU Furnace Accessories</title>
+    <title>{capitalizedTitle} | {siteConfig.name}</title>
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
-  <body>
-    <header>
-      <div class="container nav-container">
-        <a href="/" class="logo">WEIGU</a>
-        <nav class="nav-links">
-          <a href="/">Home</a>
-          <a href="/products/methanol-dropper-for-furnace/">Product</a>
-          <a href="/applications/">Applications</a>
-          <a href="/about-us/">About Us</a>
-          <a href="/contact-us/">Contact</a>
+  <body class="bg-gray-50 font-sans text-gray-900">
+    <header class="bg-primary text-white sticky top-0 z-50 shadow-lg">
+      <div class="container mx-auto px-4 h-20 flex items-center justify-between">
+        <a href="/" class="text-2xl font-bold flex items-center gap-2">
+          <div class="w-8 h-8 bg-accent rotate-45"></div>
+          WEIGU
+        </a>
+        
+        <nav class="hidden md:flex gap-8">
+          {navigation.map(item => (
+            <div class="group relative">
+              <a href={item.href} class="hover:text-accent font-semibold transition-colors">
+                {item.name}
+              </a>
+              {item.children && (
+                <div class="absolute top-full left-0 bg-white text-gray-800 shadow-xl border border-gray-100 hidden group-hover:block min-w-[220px] p-2 rounded-b">
+                  {item.children.map(child => (
+                    <a href={child.href} class="block px-4 py-2 hover:bg-gray-50 hover:text-accent rounded transition-colors text-sm">
+                      {child.name}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
         </nav>
+
+        <div class="flex items-center gap-4">
+          <div class="relative hidden lg:block">
+            <input type="text" placeholder="Search consumables..." class="bg-white/10 border border-white/20 px-4 py-1.5 rounded text-sm w-64 focus:bg-white focus:text-gray-900 focus:outline-none transition-all" />
+          </div>
+          <a href="/contact/" class="bg-accent hover:bg-orange-600 text-white px-5 py-2 rounded font-bold transition-all text-sm uppercase tracking-wide shadow-inner">
+            Get A Quote
+          </a>
+        </div>
       </div>
     </header>
-    
-    <main>
+
+    <main class="min-h-screen">
       <slot />
     </main>
 
-    <footer>
-      <div class="container">
-        <div class="footer-grid">
-          <div>
-            <h3 style="color: white; margin-bottom: 1.5rem;">WEIGU Furnace</h3>
-            <p style="opacity: 0.8; max-width: 400px;">Specialized manufacturer of high-precision methanol droppers and atmosphere control kits for industrial heat treatment processes.</p>
-          </div>
-          <div>
-            <h4 style="color: white; margin-bottom: 1.5rem;">Quick Links</h4>
-            <ul style="list-style: none;">
-              <li style="margin-bottom: 0.5rem;"><a href="/" style="color: white; opacity: 0.8; text-decoration: none;">Home</a></li>
-              <li style="margin-bottom: 0.5rem;"><a href="/products/methanol-dropper-for-furnace/" style="color: white; opacity: 0.8; text-decoration: none;">Product</a></li>
-              <li style="margin-bottom: 0.5rem;"><a href="/applications/" style="color: white; opacity: 0.8; text-decoration: none;">Applications</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4 style="color: white; margin-bottom: 1.5rem;">Contact</h4>
-            <p style="opacity: 0.8;">Email: sales@weigufurnace.com</p>
-            <p style="opacity: 0.8;">Quality solutions for furnace accessories.</p>
-          </div>
+    <footer class="bg-gray-900 text-white py-16">
+      <div class="container mx-auto px-4 grid md:grid-cols-4 gap-12 border-b border-gray-800 pb-12">
+        <div class="col-span-1 md:col-span-2">
+          <h3 class="text-2xl font-bold mb-6 flex items-center gap-2">
+            <div class="w-6 h-6 bg-accent rotate-45"></div>
+            WEIGU
+          </h3>
+          <p class="text-gray-400 max-width-md leading-relaxed mb-6">
+            Your trusted expert for heat treatment furnace process stability. We provide precision consumables and accessories for atmosphere control, temperature measurement, and insulation.
+          </p>
+          <p class="text-sm text-gray-500 italic">"Focusing on the stability of your heat treatment process."</p>
         </div>
-        <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; text-align: center; opacity: 0.6; font-size: 0.875rem;">
-          &copy; {new Date().getFullYear()} WEIGU Furnace. All rights reserved.
+        <div>
+          <h4 class="font-bold mb-6 text-accent uppercase tracking-wider text-sm">Quick Links</h4>
+          <ul class="space-y-4 text-sm">
+            <li><a href="/consumables/" class="hover:text-accent transition-colors">Consumables Hub</a></li>
+            <li><a href="/applications/" class="hover:text-accent transition-colors">Furnace Applications</a></li>
+            <li><a href="/technical-guides/" class="hover:text-accent transition-colors">Technical Guides</a></li>
+            <li><a href="/about/" class="hover:text-accent transition-colors">About WEIGU</a></li>
+          </ul>
         </div>
+        <div>
+          <h4 class="font-bold mb-6 text-accent uppercase tracking-wider text-sm">Contact Support</h4>
+          <p class="text-sm text-gray-400 mb-4">Email: {siteConfig.contactEmail}</p>
+          <a href="/contact/" class="text-sm underline hover:text-accent transition-colors">Send a detailed inquiry</a>
+        </div>
+      </div>
+      <div class="container mx-auto px-4 pt-8 text-center text-xs text-gray-600">
+        &copy; {new Date().getFullYear()} WEIGU Furnace Accessories. All Rights Reserved.
       </div>
     </footer>
   </body>

@@ -1,8 +1,8 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
+import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
-  site: 'https://www.example.com',
-  output: 'static',
-  integrations: [sitemap()],
+  site: 'https://weigufurnace.com',
+  integrations: [sitemap(), tailwind()],
 });

@@ -1,0 +1,55 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTA from '../../components/CTA.astro';
+
+const { 
+  name = "Heavy-Duty Furnace Heating Element Supports", 
+  slug = "furnace-heating-element-support",
+  desc = "Custom-designed ceramic or alloy supports to secure heating elements.",
+  specs = [
+    { label: "Support Types", value: "Hooks / Trays / Tubes / Spacers" },
+    { label: "Material Options", value: "High-Alumina / SiC / Casting Alloy" },
+    { label: "Load Capacity", value: "Industrial Weight Bearing Spec" },
+    { label: "Installation", value: "Bolt-On / Insert / Weld-On" }
+  ]
+} = Astro.props;
+---
+
+<BaseLayout title={name} description={desc}>
+  <main class="container mx-auto px-4 py-12">
+    <div class="flex flex-col lg:flex-row gap-16 items-start mb-20">
+      <div class="flex-1 bg-gray-100 aspect-square rounded-2xl flex items-center justify-center text-gray-400 border-2 border-dashed border-gray-200">
+        Product Image: {name}
+      </div>
+      <div class="flex-1">
+        <h1 class="text-4xl font-extrabold text-blue-900 mb-6 leading-tight">{name}</h1>
+        <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+          You need robust heating element supports to prevent sagging, short circuits, and mechanical failure in your furnace chamber. Our {name} are engineered to provide maximum stability for electric heating elements, ensuring that your heat source remains in the correct position for optimal thermal distribution. By choosing Weigu's verified support components, you minimize the risk of expensive element replacements and ensure the continuity of your production cycles.
+        </p>
+        
+        <div class="bg-blue-900 text-white p-8 rounded-xl mb-8 shadow-xl">
+          <h2 class="text-sm font-bold uppercase tracking-widest text-orange-400 mb-4">Technical Specifications</h2>
+          <div class="space-y-3">
+            {specs.map(spec => (
+              <div class="flex justify-between border-b border-blue-800 pb-2">
+                <span class="font-medium">{spec.label}</span>
+                <span class="text-orange-200 font-bold">{spec.value}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+        
+        <a href="/contact/" class="w-full block bg-orange-600 hover:bg-orange-700 text-white text-center py-4 rounded-lg font-black text-xl transition-all shadow-lg shadow-orange-900/20">
+          Request A Technical Quote
+        </a>
+      </div>
+    </div>
+
+    <div class="prose prose-lg max-w-none mb-20">
+      <h2 class="text-3xl font-bold text-blue-900 mb-6 border-l-8 border-orange-500 pl-6">Secure Element Installation For Process Reliability</h2>
+      <p>You require high-strength components that can withstand the high-temperature creep and mechanical stress common in sequential heat treatment lines. Our supports are available in a variety of industrial-grade ceramics and heat-resistant alloys to match your specific furnace atmosphere and temperature range. Whether you are running a carburizing pit furnace or a large-scale pusher furnace, Weigu provides the specialized supports your heating system needs to operate at peak efficiency.</p>
+    </div>
+
+    <CTA title={`Maintain Heating Stability With ${name}`} />
+  </main>
+</BaseLayout>

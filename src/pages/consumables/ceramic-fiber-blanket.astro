@@ -3,14 +3,14 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTA from '../../components/CTA.astro';
 
 const { 
-  name = "Methanol Drip Feeder For Heat Treatment Furnace", 
-  slug = "methanol-drip-feeder",
-  desc = "High-precision adjustable liquid feeding device for heat treatment furnace atmosphere control.",
+  name = "High-Density Ceramic Fiber Blanket For Furnace Lining", 
+  slug = "ceramic-fiber-blanket",
+  desc = "Superior thermal insulation blankets for heat treatment furnace linings.",
   specs = [
-    { label: "Material", value: "High-Grade Stainless Steel" },
-    { label: "Flow Control", value: "Precision Needle Valve" },
-    { label: "Sight Glass", value: "Industrial Tempered Safety Glass" },
-    { label: "Compatibility", value: "Methanol, Kerosene, Acetone" }
+    { label: "Service Temp", value: "1050°C / 1260°C / 1430°C Options" },
+    { label: "Density", value: "96kg/m³ / 128kg/m³ / 160kg/m³" },
+    { label: "Thickness", value: "10mm / 25mm / 50mm" },
+    { label: "Chemistry", value: "High Alumina / Al-Si / Zirconia" }
   ]
 } = Astro.props;
 ---
@@ -24,7 +24,7 @@ const {
       <div class="flex-1">
         <h1 class="text-4xl font-extrabold text-blue-900 mb-6 leading-tight">{name}</h1>
         <p class="text-lg text-gray-600 mb-8 leading-relaxed">
-          You need precise atmosphere control to ensure the stability of your heat treatment process. Our {name} is engineered to provide consistent liquid feeding, allowing you to maintain exact carbon potential levels with confidence. By choosing Weigu precision feeders, you reduce the risk of process fluctuations and quality rejects in your workshop.
+          You need superior thermal insulation to maximize your furnace's energy efficiency and protect its outer shell from overheating. Our {name} are engineered for low thermal conductivity and excellent resistance to thermal shock. By choosing Weigu ceramic fiber products, you reduce your factory's fuel or electricity consumption and ensure a faster heating cycle for your pit furnaces, box furnaces, and industrial kilns.
         </p>
         
         <div class="bg-blue-900 text-white p-8 rounded-xl mb-8 shadow-xl">
@@ -46,10 +46,10 @@ const {
     </div>
 
     <div class="prose prose-lg max-w-none mb-20">
-      <h2 class="text-3xl font-bold text-blue-900 mb-6 border-l-8 border-orange-500 pl-6">Industrial Precision For Reliable Carburizing</h2>
-      <p>You deserve components that are built for the harsh environments of industrial furnaces. We manufacture each drip feeder with corrosion-resistant materials to ensure a long operational life. The integrated sight glass allows you to visually verify the drip rate in real-time, providing an extra layer of process security for your critical heat treatment cycles.</p>
+      <h2 class="text-3xl font-bold text-blue-900 mb-6 border-l-8 border-orange-500 pl-6">Advanced Thermal Shielding For Industrial Efficiency</h2>
+      <p>You require lightweight insulation that can be easily installed and maintained without risking mechanical failure at high temperatures. Our blankets are double-needle punched to ensure high tensile strength and integrity during high-velocity gas flow. Whether you are performing a complete furnace reline or a minor technical guide repair, Weigu provides the high-grade fiber solutions needed to maintain consistent thermal performance across your operations.</p>
     </div>
 
-    <CTA title={`Upgrade Your Furnace With Our ${name}`} />
+    <CTA title={`Upgrade Your Furnace Insulation With ${name}`} />
   </main>
 </BaseLayout>

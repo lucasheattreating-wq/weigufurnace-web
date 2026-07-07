@@ -3,14 +3,14 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTA from '../../components/CTA.astro';
 
 const { 
-  name = "Methanol Drip Feeder For Heat Treatment Furnace", 
-  slug = "methanol-drip-feeder",
-  desc = "High-precision adjustable liquid feeding device for heat treatment furnace atmosphere control.",
+  name = "Precision Ammonia Flow Meter For Nitriding Process", 
+  slug = "ammonia-flow-meter",
+  desc = "Accurate ammonia gas flow measurement for furnace atmosphere control.",
   specs = [
-    { label: "Material", value: "High-Grade Stainless Steel" },
-    { label: "Flow Control", value: "Precision Needle Valve" },
-    { label: "Sight Glass", value: "Industrial Tempered Safety Glass" },
-    { label: "Compatibility", value: "Methanol, Kerosene, Acetone" }
+    { label: "Flow Range", value: "0.1 - 100 L/min (Custom)" },
+    { label: "Accuracy", value: "Class 1.5 Industrial Grade" },
+    { label: "Material", value: "Glass / Polycarbonate / SS" },
+    { label: "Scale Type", value: "Dual Scale (Ammonia Specific)" }
   ]
 } = Astro.props;
 ---
@@ -24,7 +24,7 @@ const {
       <div class="flex-1">
         <h1 class="text-4xl font-extrabold text-blue-900 mb-6 leading-tight">{name}</h1>
         <p class="text-lg text-gray-600 mb-8 leading-relaxed">
-          You need precise atmosphere control to ensure the stability of your heat treatment process. Our {name} is engineered to provide consistent liquid feeding, allowing you to maintain exact carbon potential levels with confidence. By choosing Weigu precision feeders, you reduce the risk of process fluctuations and quality rejects in your workshop.
+          You need consistent ammonia gas flow to achieve the perfect nitrided case on your metal parts. Our {name} provides you with a clear, accurate reading of your gas consumption, ensuring your furnace atmosphere remains within critical metallurgical parameters. You will notice a marked improvement in the uniformity of your nitriding cycles by implementing our precision flow control solutions.
         </p>
         
         <div class="bg-blue-900 text-white p-8 rounded-xl mb-8 shadow-xl">
@@ -46,10 +46,10 @@ const {
     </div>
 
     <div class="prose prose-lg max-w-none mb-20">
-      <h2 class="text-3xl font-bold text-blue-900 mb-6 border-l-8 border-orange-500 pl-6">Industrial Precision For Reliable Carburizing</h2>
-      <p>You deserve components that are built for the harsh environments of industrial furnaces. We manufacture each drip feeder with corrosion-resistant materials to ensure a long operational life. The integrated sight glass allows you to visually verify the drip rate in real-time, providing an extra layer of process security for your critical heat treatment cycles.</p>
+      <h2 class="text-3xl font-bold text-blue-900 mb-6 border-l-8 border-orange-500 pl-6">Reliable Gas Monitoring For Industrial Furnaces</h2>
+      <p>You can trust Weigu to provide gas measurement tools that handle the rigorous demands of your workshop floor. Our ammonia flow meters are built with chemically resistant materials to ensure long-term stability without fogging or scale degradation. Whether you are upgrading an existing pit furnace or building a new nitriding line, our meters offer the accuracy and durability your process requires.</p>
     </div>
 
-    <CTA title={`Upgrade Your Furnace With Our ${name}`} />
+    <CTA title={`Master Your Nitriding Process With ${name}`} />
   </main>
 </BaseLayout>

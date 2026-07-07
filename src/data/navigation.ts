@@ -15,9 +15,9 @@ export const navigation = [
   { name: 'Technical Guides', href: '/technical-guides/' },
   { 
     name: 'About WEIGU', 
-    href: '/about/',
+    href: '/about-us/',
     children: [
-      { name: 'Company Profile', href: '/about/' },
+      { name: 'Company Profile', href: '/about-us/' },
       { name: 'Why WEIGU', href: '/why-weigu/' },
       { name: 'Contact', href: '/contact/' }
     ]

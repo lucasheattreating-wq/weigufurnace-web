@@ -1,13 +1,36 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
-const categories = [
-  { title: "Heating Elements", icon: "ð¥", link: "/consumables/heating-elements" },
-  { title: "Insulation Boards", icon: "ð§±", link: "/consumables/insulation" },
-  { title: "Thermocouples", icon: "ð¡ï¸", link: "/consumables/thermocouples" },
-  { title: "Atmosphere Feeders", icon: "ð§", link: "/consumables/methanol-drip-feeder" },
-  { title: "Radiant Tubes", icon: "â­", link: "/consumables/radiant-tubes" },
-  { title: "Furnace Hearth", icon: "ð ", link: "/consumables/hearth" }
+const products = [
+  { title: "Alumina Crucible Lab Use", icon: "🧪", link: "/consumables/alumina-crucible-lab-use/" },
+  { title: "Ammonia Flow Meter", icon: "📊", link: "/consumables/ammonia-flow-meter/" },
+  { title: "Atmosphere Gas Manifold", icon: "💨", link: "/consumables/atmosphere-gas-manifold/" },
+  { title: "Ceramic Fiber Blanket", icon: "🧶", link: "/consumables/ceramic-fiber-blanket/" },
+  { title: "Ceramic Fiber Board", icon: "🧱", link: "/consumables/ceramic-fiber-board/" },
+  { title: "Furnace Base Casting", icon: "🏗️", link: "/consumables/furnace-base-casting/" },
+  { title: "Furnace Ceramic Insulator", icon: "⚡", link: "/consumables/furnace-ceramic-insulator/" },
+  { title: "Furnace Door Sealing Gasket", icon: "🚪", link: "/consumables/furnace-door-sealing-gasket/" },
+  { title: "Furnace Fan Impeller", icon: "🌀", link: "/consumables/furnace-fan-impeller/" },
+  { title: "Furnace Heating Element Support", icon: "🏗️", link: "/consumables/furnace-heating-element-support/" },
+  { title: "Furnace Muffle Tube", icon: "🧪", link: "/consumables/furnace-muffle-tube/" },
+  { title: "Furnace Peep Hole Glass", icon: "👁️", link: "/consumables/furnace-peep-hole-glass/" },
+  { title: "Graphite Crucible High Purity", icon: "🌚", link: "/consumables/graphite-crucible-high-purity/" },
+  { title: "Heat Resistant Steel Basket", icon: "🧺", link: "/consumables/heat-resistant-steel-basket/" },
+  { title: "Heat Treatment Verification Ring", icon: "⭕", link: "/consumables/heat-treatment-verification-ring/" },
+  { title: "High Temp Compensation Wire", icon: "🔌", link: "/consumables/high-temp-compensation-wire/" },
+  { title: "High Temp Furnace Paint", icon: "🎨", link: "/consumables/high-temp-furnace-paint/" },
+  { title: "Kerosene Drip Feeder", icon: "💧", link: "/consumables/kerosene-drip-feeder/" },
+  { title: "Lab Tube Furnace Flange", icon: "🔩", link: "/consumables/lab-tube-furnace-flange/" },
+  { title: "Methanol Drip Feeder Kit", icon: "🛠️", link: "/consumables/methanol-drip-feeder-kit/" },
+  { title: "Methanol Drip Feeder", icon: "💧", link: "/consumables/methanol-drip-feeder/" },
+  { title: "MoSi2 Heating Element", icon: "🔥", link: "/consumables/mosi2-heating-element/" },
+  { title: "Pressure Relief Valve", icon: "🎈", link: "/consumables/pressure-relief-valve/" },
+  { title: "Radiant Tube Heater", icon: "⭕", link: "/consumables/radiant-tube-heater/" },
+  { title: "Refractory Anchor Bolt", icon: "🔩", link: "/consumables/refractory-anchor-bolt/" },
+  { title: "SiC Heating Element", icon: "🔥", link: "/consumables/sic-heating-element/" },
+  { title: "Thermocouple Head Connection", icon: "🌡️", link: "/consumables/thermocouple-head-connection/" },
+  { title: "Thermocouple Protection Tube", icon: "🌡️", link: "/consumables/thermocouple-protection-tube/" },
+  { title: "Vacuum Grease High Temp", icon: "🧴", link: "/consumables/vacuum-grease-high-temp/" }
 ];
 ---
 
@@ -19,11 +42,11 @@ const categories = [
     </p>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {categories.map(cat => (
-        <a href={cat.link} class="border p-6 rounded-lg hover:shadow-lg transition">
-          <span class="text-3xl mb-4 block">{cat.icon}</span>
-          <h3 class="text-xl font-semibold mb-2">{cat.title}</h3>
-          <p class="text-gray-600">Upgrade your furnace with high-quality {cat.title.toLowerCase()}.</p>
+      {products.map(product => (
+        <a href={product.link} class="border p-6 rounded-lg hover:shadow-lg transition">
+          <span class="text-3xl mb-4 block">{product.icon}</span>
+          <h3 class="text-xl font-semibold mb-2">{product.title}</h3>
+          <p class="text-gray-600">Upgrade your furnace with high-quality {product.title.toLowerCase()}.</p>
         </a>
       ))}
     </div>
@@ -31,7 +54,7 @@ const categories = [
     <div class="mt-12">
       <h2 class="text-2xl font-bold mb-4">Support For Your Operations</h2>
       <p>
-        If you are unsure which component fits your specific furnace model, you can check our <a href="/technical-guides" class="text-blue-600 underline">Technical Guides</a> or learn more <a href="/about-us" class="text-blue-600 underline">About Us</a> and our commitment to quality.
+        If you are unsure which component fits your specific furnace model, you can check our <a href="/contact" class="text-blue-600 underline">Technical Support</a> or learn more <a href="/why-weigu" class="text-blue-600 underline">Why Weigu</a> and our commitment to quality.
       </p>
     </div>
   </main>

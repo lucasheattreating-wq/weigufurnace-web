@@ -9,7 +9,9 @@
   },
   "dependencies": {
     "@astrojs/sitemap": "latest",
-    "astro": "latest"
+    "@astrojs/tailwind": "latest",
+    "astro": "latest",
+    "tailwindcss": "latest"
   },
   "devDependencies": {}
 }

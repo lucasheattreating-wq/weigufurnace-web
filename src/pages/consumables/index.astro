@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const categories = [
+  { title: "Heating Elements", icon: "🔥", link: "/consumables/heating-elements" },
+  { title: "Insulation Boards", icon: "🧱", link: "/consumables/insulation" },
+  { title: "Thermocouples", icon: "🌡️", link: "/consumables/thermocouples" },
+  { title: "Atmosphere Feeders", icon: "💧", link: "/consumables/methanol-drip-feeder" },
+  { title: "Radiant Tubes", icon: "⭕", link: "/consumables/radiant-tubes" },
+  { title: "Furnace Hearth", icon: "🏠", link: "/consumables/hearth" }
+];
+---
+
+<BaseLayout title="Consumables For Industrial Furnaces">
+  <main class="container mx-auto px-4 py-12">
+    <h1 class="text-4xl font-bold mb-6">Consumables For Industrial Furnaces</h1>
+    <p class="text-lg mb-8">
+      When you operate high-performance heat treatment equipment, you need reliable components that can withstand extreme temperatures. You will find that our premium selection of furnace consumables ensures your production line remains efficient and downtime is minimized. Explore our range of heating elements, insulation, and atmosphere control parts designed specifically for your demanding industrial applications.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {categories.map(cat => (
+        <a href={cat.link} class="border p-6 rounded-lg hover:shadow-lg transition">
+          <span class="text-3xl mb-4 block">{cat.icon}</span>
+          <h3 class="text-xl font-semibold mb-2">{cat.title}</h3>
+          <p class="text-gray-600">Upgrade your furnace with high-quality {cat.title.toLowerCase()}.</p>
+        </a>
+      ))}
+    </div>
+    
+    <div class="mt-12">
+      <h2 class="text-2xl font-bold mb-4">Support For Your Operations</h2>
+      <p>
+        If you are unsure which component fits your specific furnace model, you can check our <a href="/technical-guides" class="text-blue-600 underline">Technical Guides</a> or learn more <a href="/about-us" class="text-blue-600 underline">About Us</a> and our commitment to quality.
+      </p>
+    </div>
+  </main>
+</BaseLayout>

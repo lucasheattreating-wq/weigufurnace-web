@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const products = [
+  { title: "Ceramic Fiber Blanket", icon: "🧶", link: "/consumables/ceramic-fiber-blanket/" },
+  { title: "Ceramic Fiber Board", icon: "🧱", link: "/consumables/ceramic-fiber-board/" },
+  { title: "Furnace Heating Element Support", icon: "🏗️", link: "/consumables/furnace-heating-element-support/" },
+  { title: "Refractory Anchor Bolt", icon: "🔩", link: "/consumables/refractory-anchor-bolt/" },
+  { title: "Furnace Muffle Tube", icon: "🧪", link: "/consumables/furnace-muffle-tube/" }
+];
+---
+<BaseLayout title="High Temperature Furnace Insulation And Lining">
+  <main class="container mx-auto px-4 py-12">
+    <h1 class="text-4xl font-bold mb-6">High Temperature Furnace Insulation And Lining</h1>
+    <p class="text-lg mb-8">
+      You understand that superior insulation is the key to energy efficiency and thermal uniformity in your industrial furnace. When you utilize our high-density ceramic fiber blankets and rigid boards, you significantly reduce heat loss and lower your operational costs. Our durable lining accessories are engineered to withstand thermal shock and provide a stable hot-face for your carburizing or vacuum operations.
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {products.map(product => (
+        <a href={product.link} class="border p-6 rounded-lg hover:shadow-lg transition">
+          <span class="text-3xl mb-4 block">{product.icon}</span>
+          <h3 class="text-xl font-semibold mb-2">{product.title}</h3>
+          <p class="text-gray-600">Maximize efficiency with {product.title.toLowerCase()}.</p>
+        </a>
+      ))}
+    </div>
+  </main>
+</BaseLayout>

@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const products = [
+  { title: "Thermocouple Protection Tube", icon: "🌡️", link: "/consumables/thermocouple-protection-tube/" },
+  { title: "High Temp Compensation Wire", icon: "🔌", link: "/consumables/high-temp-compensation-wire/" },
+  { title: "Furnace Ceramic Insulator", icon: "⚡", link: "/consumables/furnace-ceramic-insulator/" },
+  { title: "Thermocouple Head Connection", icon: "🌡️", link: "/consumables/thermocouple-head-connection/" }
+];
+---
+<BaseLayout title="Precision Temperature Measurement Components">
+  <main class="container mx-auto px-4 py-12">
+    <h1 class="text-4xl font-bold mb-6">Precision Temperature Measurement Components</h1>
+    <p class="text-lg mb-8">
+      You need accurate temperature data to protect your furnace charges and ensure repeatability in your thermal cycles. You will find that our selection of industrial protection tubes and compensation wires provides the durability needed for extreme heat treatment environments. By using our verified sensors and connection parts, you reduce measurement drift and ensure your process remains within strict metallurgical tolerances.
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {products.map(product => (
+        <a href={product.link} class="border p-6 rounded-lg hover:shadow-lg transition">
+          <span class="text-3xl mb-4 block">{product.icon}</span>
+          <h3 class="text-xl font-semibold mb-2">{product.title}</h3>
+          <p class="text-gray-600">Reliable data with high-grade {product.title.toLowerCase()}.</p>
+        </a>
+      ))}
+    </div>
+  </main>
+</BaseLayout>

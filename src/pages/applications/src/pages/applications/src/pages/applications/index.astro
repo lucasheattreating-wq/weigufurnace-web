@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const furnaceTypes = [
+  { title: "Bell Type Furnace", link: "/applications/bell-type-furnace/" },
+  { title: "Box Type Furnace Parts", link: "/applications/box-type-furnace-parts/" },
+  { title: "Carburizing Furnace Accessories", link: "/applications/carburizing-furnace-accessories/" },
+  { title: "Continuous Annealing Line", link: "/applications/continuous-annealing-line/" },
+  { title: "Laboratory Furnace Consumables", link: "/applications/laboratory-furnace-consumables/" },
+  { title: "Mesh Belt Conveyor Furnace", link: "/applications/mesh-belt-conveyor-furnace/" },
+  { title: "Pit Type Furnace Components", link: "/applications/pit-type-furnace-components/" },
+  { title: "Protective Atmosphere Brazing", link: "/applications/protective-atmosphere-brazing/" },
+  { title: "Pusher Type Furnace", link: "/applications/pusher-type-furnace/" },
+  { title: "Roller Hearth Furnace", link: "/applications/roller-hearth-furnace/" },
+  { title: "Rotary Hearth Furnace", link: "/applications/rotary-hearth-furnace/" },
+  { title: "Vacuum Heat Treatment Furnace", link: "/applications/vacuum-heat-treatment-furnace/" }
+];
+---
+
+<BaseLayout title="Applications For Heat Treatment">
+  <main class="container mx-auto px-4 py-12">
+    <h1 class="text-4xl font-bold mb-6">Applications For Heat Treatment</h1>
+    <p class="text-lg mb-8">
+      You deserve heating solutions that match the complexity of your metal processing needs. Whether you are performing carburizing, nitriding, or simple annealing, you can rely on our specialized furnace applications to deliver consistent results. Our equipment is built to handle your toughest metallurgical challenges while maintaining the highest safety standards and energy efficiency in your facility.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {furnaceTypes.map(type => (
+        <div class="border p-8 rounded-xl bg-gray-50">
+          <h2 class="text-2xl font-bold mb-4">{type.title}</h2>
+          <p class="mb-4">Optimized performance for your industrial heat treatment cycles.</p>
+          <a href={type.link} class="inline-block bg-blue-600 text-white px-6 py-2 rounded">View Specs</a>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-16 text-center">
+      <h2 class="text-3xl font-bold mb-4">Discover The Weigu Difference</h2>
+      <p class="max-w-2xl mx-auto mb-6">
+        You can see why leading manufacturers choose our systems by visiting our <a href="/why-weigu" class="text-blue-600 underline">Value Proposition</a> page or browsing our <a href="/consumables" class="text-blue-600 underline">Furnace Consumables</a>.
+      </p>
+    </div>
+  </main>
+</BaseLayout>

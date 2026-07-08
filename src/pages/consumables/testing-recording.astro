@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const products = [
+  { title: "Heat Treatment Verification Ring", icon: "⭕", link: "/consumables/heat-treatment-verification-ring/" }
+];
+---
+<BaseLayout title="Process Testing And Quality Recording">
+  <main class="container mx-auto px-4 py-12">
+    <h1 class="text-4xl font-bold mb-6">Process Testing And Quality Recording</h1>
+    <p class="text-lg mb-8">
+      You require an objective method to verify your heat treatment quality and ensure process compliance for your customers. By implementing our precision verification rings, you gain traceable data on the total heat work achieved in your furnace. You can eliminate guesswork and identify process deviations before they lead to rejects, guaranteeing the metallurgical integrity of every batch processed in your workshop.
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {products.map(product => (
+        <a href={product.link} class="border p-6 rounded-lg hover:shadow-lg transition">
+          <span class="text-3xl mb-4 block">{product.icon}</span>
+          <h3 class="text-xl font-semibold mb-2">{product.title}</h3>
+          <p class="text-gray-600">Traceable results with {product.title.toLowerCase()}.</p>
+        </a>
+      ))}
+    </div>
+  </main>
+</BaseLayout>

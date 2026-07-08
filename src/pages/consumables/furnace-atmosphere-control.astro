@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const products = [
+  { title: "Methanol Drip Feeder", icon: "💧", link: "/consumables/methanol-drip-feeder/" },
+  { title: "Kerosene Drip Feeder", icon: "💧", link: "/consumables/kerosene-drip-feeder/" },
+  { title: "Ammonia Flow Meter", icon: "📊", link: "/consumables/ammonia-flow-meter/" },
+  { title: "Methanol Drip Feeder Kit", icon: "🛠️", link: "/consumables/methanol-drip-feeder-kit/" },
+  { title: "Atmosphere Gas Manifold", icon: "💨", link: "/consumables/atmosphere-gas-manifold/" }
+];
+---
+<BaseLayout title="Furnace Atmosphere Control Systems">
+  <main class="container mx-auto px-4 py-12">
+    <h1 class="text-4xl font-bold mb-6">Furnace Atmosphere Control Systems</h1>
+    <p class="text-lg mb-8">
+      You deserve precise control over your furnace atmosphere to ensure consistent carburizing and nitriding results. When you integrate our high-performance liquid drip feeders and flow meters, you achieve the stability required for high-quality metal processing. Our expert-sourced atmosphere control components help you eliminate quality fluctuations and maintain the critical carbon potential your factory demands.
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {products.map(product => (
+        <a href={product.link} class="border p-6 rounded-lg hover:shadow-lg transition">
+          <span class="text-3xl mb-4 block">{product.icon}</span>
+          <h3 class="text-xl font-semibold mb-2">{product.title}</h3>
+          <p class="text-gray-600">Upgrade your furnace with precision {product.title.toLowerCase()}.</p>
+        </a>
+      ))}
+    </div>
+  </main>
+</BaseLayout>

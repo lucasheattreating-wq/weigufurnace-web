@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const products = [
+  { title: "Graphite Crucible High Purity", icon: "🌚", link: "/consumables/graphite-crucible-high-purity/" },
+  { title: "Furnace Fan Impeller", icon: "🌀", link: "/consumables/furnace-fan-impeller/" },
+  { title: "Furnace Door Sealing Gasket", icon: "🚪", link: "/consumables/furnace-door-sealing-gasket/" },
+  { title: "Radiant Tube Heater", icon: "⭕", link: "/consumables/radiant-tube-heater/" },
+  { title: "Pressure Relief Valve", icon: "🎈", link: "/consumables/pressure-relief-valve/" },
+  { title: "SiC Heating Element", icon: "🔥", link: "/consumables/sic-heating-element/" }
+];
+---
+<BaseLayout title="Small Industrial And Laboratory Furnace Accessories">
+  <main class="container mx-auto px-4 py-12">
+    <h1 class="text-4xl font-bold mb-6">Small Industrial And Laboratory Furnace Accessories</h1>
+    <p class="text-lg mb-8">
+      You can maintain the performance of your laboratory or small-scale industrial furnace with our specialized selection of precision accessories. Whether you need high-purity graphite crucibles for clean melting or silicon carbide heating elements for high-temperature cycles, we provide the industrial-grade components you need. You will ensure the longevity of your equipment by choosing our verified seals, impellers, and relief valves today.
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {products.map(product => (
+        <a href={product.link} class="border p-6 rounded-lg hover:shadow-lg transition">
+          <span class="text-3xl mb-4 block">{product.icon}</span>
+          <h3 class="text-xl font-semibold mb-2">{product.title}</h3>
+          <p class="text-gray-600">Reliable performance with {product.title.toLowerCase()}.</p>
+        </a>
+      ))}
+    </div>
+  </main>
+</BaseLayout>

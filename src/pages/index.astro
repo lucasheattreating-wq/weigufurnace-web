@@ -3,10 +3,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { siteConfig } from '../data/navigation';
 
 const categories = [
-  { name: 'Atmosphere Control', desc: 'Liquid drip feeders and flow control for carburizing processes.', icon: 'M', href: '/consumables/furnace-atmosphere-control/' },
-  { name: 'Temperature Measurement', desc: 'Precision thermocouple connection parts and insulation tubes.', icon: 'T', href: '/consumables/temperature-measurement/' },
-  { name: 'Insulation & Lining', desc: 'High-temperature ceramic fiber blankets and fixings.', icon: 'I', href: '/consumables/furnace-insulation-lining/' },
-  { name: 'Testing & Recording', desc: 'Process verification rings and hardness testing supplies.', icon: 'V', href: '/consumables/testing-recording/' }
+  { name: 'Atmosphere Control', desc: 'Liquid drip feeders and flow control for carburizing processes.', icon: 'M', href: '/consumables/methanol-drip-feeder/' },
+  { name: 'Temperature Measurement', desc: 'Precision thermocouple connection parts and insulation tubes.', icon: 'T', href: '/consumables/thermocouple-protection-tube/' },
+  { name: 'Insulation & Lining', desc: 'High-temperature ceramic fiber blankets and fixings.', icon: 'I', href: '/consumables/ceramic-fiber-board/' },
+  { name: 'Testing & Recording', desc: 'Process verification rings and hardness testing supplies.', icon: 'V', href: '/consumables/heat-treatment-verification-ring/' }
 ];
 ---
 
@@ -20,6 +20,16 @@ const categories = [
         <h1 class="text-4xl md:text-6xl font-extrabold text-primary mb-8 leading-tight">
           Precision Consumables For Heat Treatment Furnaces
         </h1>
+
+        <!-- 1200x600 Premium Industrial Product Kit Shot Placeholder -->
+        <div class="w-full aspect-[2/1] bg-slate-100 rounded-3xl mb-12 border border-slate-200 overflow-hidden shadow-inner flex items-center justify-center relative group">
+           <div class="absolute inset-0 bg-gradient-to-t from-slate-900/10 to-transparent"></div>
+           <div class="flex flex-col items-center gap-4 text-slate-400">
+              <span class="text-6xl opacity-30">📐</span>
+              <span class="text-xs uppercase font-bold tracking-[0.2em] opacity-40 italic">1200x600 Premium Industrial Product Kit Shot</span>
+           </div>
+        </div>
+
         <p class="text-lg text-gray-600 mb-10 max-w-xl leading-relaxed">
           You need reliable atmosphere control and temperature measurement to ensure high-quality results. WEIGU provides industrial-grade accessories designed for pit furnaces, box furnaces, and mesh belt lines.
         </p>
@@ -64,13 +74,16 @@ const categories = [
           <h2 class="text-2xl font-bold mb-10 text-primary border-l-4 border-accent pl-4">Shop By Category</h2>
           <div class="grid sm:grid-cols-2 gap-8">
             {categories.map(cat => (
-              <a href={cat.href} class="group bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:border-accent hover:shadow-xl transition-all flex items-start gap-6">
-                <div class="w-14 h-14 bg-gray-50 flex items-center justify-center rounded-lg text-2xl group-hover:bg-accent group-hover:text-white transition-all text-primary font-bold">
-                  {cat.icon}
+              <a href={cat.href} class="group bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:border-accent hover:shadow-2xl transition-all flex flex-col items-center text-center gap-6">
+                <!-- 200x200 large icons with gray modeling background -->
+                <div class="w-[200px] h-[200px] bg-slate-100 flex items-center justify-center rounded-xl border border-slate-200 group-hover:bg-white transition-colors overflow-hidden relative">
+                  <div class="absolute inset-0 bg-gradient-to-br from-slate-200/50 to-transparent"></div>
+                  <span class="text-6xl group-hover:scale-110 transition-transform duration-500 relative z-10">{cat.icon}</span>
+                  <div class="absolute bottom-4 left-0 right-0 text-[8px] uppercase font-bold tracking-[0.3em] opacity-20 italic">Industrial 3D View</div>
                 </div>
                 <div>
                   <h3 class="text-xl font-bold mb-3 group-hover:text-accent transition-colors">{cat.name}</h3>
-                  <p class="text-sm text-gray-500 leading-relaxed">{cat.desc}</p>
+                  <p class="text-sm text-gray-500 leading-relaxed max-w-[250px]">{cat.desc}</p>
                 </div>
               </a>
             ))}
@@ -103,3 +116,4 @@ const categories = [
   </section>
 
 </BaseLayout>
+
